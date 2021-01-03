@@ -6,7 +6,7 @@ from discord.ext import commands
 from .utils import checks
 
 
-class MassDM:
+class Massdm(commands.Cog):
 
     """Send a direct message to all members of the specified Role."""
 
@@ -26,7 +26,7 @@ class MassDM:
 
     @commands.command(no_pm=True, pass_context=True, name="massdm",
                       aliases=["mdm"])
-    @checks.mod_or_permissions(administrator=True)
+    @checks.has_permissions(PermissionLevel.ADMIN)
     async def _mdm(self, ctx: commands.Context,
                    role: discord.Role, *, message: str):
         """Sends a DM to all Members with the given Role.
