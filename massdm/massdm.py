@@ -25,6 +25,9 @@ class Massdm(commands.Cog):
                 roled.append(member)
         return roled
 
+    @commands.command(aliases=["mdm"])
+    @commands.guild_only()
+    @checks.has_permissions(PermissionLevel.ADMIN)
     @commands.command(no_pm=True, pass_context=True, name="massdm",
                       aliases=["mdm"])
     @checks.has_permissions(PermissionLevel.ADMIN)
