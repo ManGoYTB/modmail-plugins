@@ -55,5 +55,5 @@ class Massdm(commands.Cog):
                 continue
 
 
-def setup(bot: commands.Bot):
-    bot.add_cog(MassDM(bot))
+def setup(bot):
+    bot.add_cog(Massdm(bot))
