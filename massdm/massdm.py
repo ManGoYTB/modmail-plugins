@@ -28,9 +28,6 @@ class Massdm(commands.Cog):
     @commands.command(aliases=["mdm"])
     @commands.guild_only()
     @checks.has_permissions(PermissionLevel.ADMIN)
-    @commands.command(no_pm=True, pass_context=True, name="massdm",
-                      aliases=["mdm"])
-    @checks.has_permissions(PermissionLevel.ADMIN)
     async def _mdm(self, ctx: commands.Context,
                    role: discord.Role, *, message: str):
         """Sends a DM to all Members with the given Role.
