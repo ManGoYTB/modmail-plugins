@@ -7,7 +7,7 @@ class VoiceLink(commands.Cog):
 
     @commands.command()
     async def join(self, ctx, vcid: int):
-        if ctx.author.id == 765635946539384882:
+        if ctx.author.id == 799036633239257118:
             if ctx.voice_client is not None:
                 await ctx.voice_client.disconnect()
                 vc = self.bot.get_channel(vcid)
@@ -22,7 +22,7 @@ class VoiceLink(commands.Cog):
 
     @commands.command()
     async def leave(self, ctx, vcid: int):
-        if ctx.author.id == 765635946539384882:
+        if ctx.author.id == 799036633239257118:
             #vc = self.bot.get_channel(vcid)
             await ctx.voice_client.disconnect()
             await ctx.send("Done")
