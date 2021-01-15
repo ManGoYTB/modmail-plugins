@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import asyncio
 import json
-from .check import checks
 import aiohttp
 
 class testtttttt(commands.Cog):
