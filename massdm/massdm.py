@@ -4,8 +4,6 @@ import datetime
 import discord
 from discord.ext import commands
 
-from core import checks
-from core.models import PermissionLevel
 
 class Massdm(commands.Cog):
 
@@ -25,9 +23,7 @@ class Massdm(commands.Cog):
                 roled.append(member)
         return roled
 
-    @commands.command(aliases=["mdm"])
-    @commands.guild_only()
-    @checks.has_permissions(PermissionLevel.ADMIN)
+    @commands.command()
     async def _mdm(self, ctx: commands.Context,
                    role: discord.Role, *, message: str):
         """Sends a DM to all Members with the given Role.
