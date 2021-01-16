@@ -9,7 +9,18 @@ class Massdm(commands.Cog):
 
     """Send a direct message to all members of the specified Role."""
 
+    def __init__(self, ctx):
+        self.bot = bot
 
+    def _member_has_role(self, ctx):
+        return role in member.roles
+
+    def _get_users_with_role(self, ctx): -> List[discord.User]:
+        roled = []
+        for member in server.members:
+            if self._member_has_role(member, role):
+                roled.append(member)
+        return roled
 
     
     
