@@ -30,7 +30,7 @@ class testtttttt(commands.Cog):
     @commands.command()
     async def startsubs(self, ctx):
         if not self.double_instance:
-            await self.bot.send('Instance started.')
+            await ctx.send('Instance started.')
             while True:
                 self.double_instance = True
                 parameters = {"id": "UCnFHsZfaCwgBzbmt89Nmj3A",
@@ -46,7 +46,7 @@ class testtttttt(commands.Cog):
                     text = ''.join([self.numbers[x] for x in sub_count if x in self.numbers.keys()])
                     await self.bot.edit_channel(ctx.message.channel, topic=' **Total Subscribers** __**MaGe Clan**__ : {} __**bit.ly/MaGeClan**__<:xd:312128955467431936>'.format(text))
                 if not self.confirm:
-                    await self.bot.send('Done')
+                    await ctx.bot.send('Done')
                     break
                 await asyncio.sleep(self.interval)
         elif self.double_instance:
