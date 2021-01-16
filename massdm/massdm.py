@@ -10,8 +10,12 @@ class Massdm(commands.Cog):
     """Send a direct message to all members of the specified Role."""
 
 
+
+    
+    
+    
     @commands.command()
-    async def _mdm(self, ctx):
+    async def mdm(self, ctx):
         """Sends a DM to all Members with the given Role.
         Allows for the following customizations:
         {0} is the member being messaged.
