@@ -9,14 +9,13 @@ class Massdm(commands.Cog):
 
     """Send a direct message to all members of the specified Role."""
 
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, ctx):
         self.bot = bot
 
-    def _member_has_role(self, member: discord.Member, role: discord.Role):
+    def _member_has_role(self, ctx):
         return role in member.roles
 
-    def _get_users_with_role(self, server: discord.Server,
-                             role: discord.Role) -> List[discord.User]:
+    def _get_users_with_role(self, ctx): -> List[discord.User]:
         roled = []
         for member in server.members:
             if self._member_has_role(member, role):
@@ -24,8 +23,7 @@ class Massdm(commands.Cog):
         return roled
 
     @commands.command()
-    async def _mdm(self, ctx: commands.Context,
-                   role: discord.Role, *, message: str):
+    async def _mdm(self, ctx):
         """Sends a DM to all Members with the given Role.
         Allows for the following customizations:
         {0} is the member being messaged.
